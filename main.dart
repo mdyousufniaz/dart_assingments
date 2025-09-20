@@ -4,7 +4,7 @@ double findMax({required final List<double> numbers}) {
   double max = numbers.first;
 
   for (int index = 1; index < numbers.length; ++index) {
-    double mark = numbers[index];
+    final double mark = numbers[index];
     if (mark > max) max = mark;
   }
 
@@ -20,9 +20,9 @@ void main() {
     final double roundedMark = double.parse(
       mark.toStringAsFixed(2)
     );
-
     marks.add(roundedMark);
   }
+  
   print("Marks List: $marks");
   print("Largest Mark: ${findMax(numbers: marks)}");
 }
