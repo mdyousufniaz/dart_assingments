@@ -1,7 +1,4 @@
-# Assingment-1
+# Assignment-3
 
-- Create a Map called student with name "Alice", age 20, and grade "A".
-- Print the name and grade.
-- Change the age to 21 and grade to "A+".
-- Add school "Greenwood High"
-- Use a loop to print all keys and values.
+- Suppose you have marks of 10 random students.
+- Write a function findMax that takes a list of numbers and returns the largest number.

@@ -1,17 +1,28 @@
+import 'dart:math' show Random;
+
+double findMax(final List<double> marks) {
+  double max = marks.first;
+
+  for (int index = 1; index < marks.length; ++index) {
+    double mark = marks[index];
+    if (mark > max) max = mark;
+  }
+
+  return max;
+}
+
 void main() {
-  final Map<String, Object> student = {
-		'name': 'Alice',
-		'age': 20,
-		'grade': 'A'
-  };
+  final List<double> marks = [];
+  final Random rand = Random();
 
-	print("Name: ${student['name']}");
-	print("Age: ${student['age']}");
+  for (int index = 0; index < 10; ++index) {
+    final double mark = rand.nextDouble() * 99 + 1;
+    final double roundedMark = double.parse(
+      mark.toStringAsFixed(2)
+    );
 
-	student['age'] = 21;
-	student['grade'] = 'A+';
-	student['school'] = "Greenwood High";
-
-	print("\nPrinting 'Student' Details:");
-	student.forEach((key, value) => print("$key: $value"));
+    marks.add(roundedMark);
+  }
+  print("Marks List: $marks");
+  print("Largest Mark: ${findMax(marks)}");
 }
