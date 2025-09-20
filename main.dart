@@ -1,17 +1,18 @@
+import 'dart:io' show stdin, stdout, exit;
+
 void main() {
-  final Map<String, Object> student = {
-		'name': 'Alice',
-		'age': 20,
-		'grade': 'A'
-  };
+  stdout.write("Enter a number: ");
+  final int number;
 
-	print("Name: ${student['name']}");
-	print("Age: ${student['age']}");
+  try {
+    number = int.parse(stdin.readLineSync()!);
+  } on FormatException {
+    print("Please input a valid Intger!");
+    exit(1);
+  }
 
-	student['age'] = 21;
-	student['grade'] = 'A+';
-	student['school'] = "Greenwood High";
+  for (int i = 1; i <= 10; ++i) {
+    print("$number x $i = ${number * i}");
+  }
 
-	print("\nPrinting 'Student' Details:");
-	student.forEach((key, value) => print("$key: $value"));
 }
