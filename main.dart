@@ -1,10 +1,10 @@
 import 'dart:math' show Random;
 
-double findMax(final List<double> marks) {
-  double max = marks.first;
+double findMax({required final List<double> numbers}) {
+  double max = numbers.first;
 
-  for (int index = 1; index < marks.length; ++index) {
-    double mark = marks[index];
+  for (int index = 1; index < numbers.length; ++index) {
+    double mark = numbers[index];
     if (mark > max) max = mark;
   }
 
@@ -24,5 +24,5 @@ void main() {
     marks.add(roundedMark);
   }
   print("Marks List: $marks");
-  print("Largest Mark: ${findMax(marks)}");
+  print("Largest Mark: ${findMax(numbers: marks)}");
 }
