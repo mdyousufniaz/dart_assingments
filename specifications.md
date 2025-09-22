@@ -1,4 +1,11 @@
 # Assignment-3
 
-- Suppose you have marks of 10 random students.
-- Write a function findMax that takes a list of numbers and returns the largest number.
+### Create a class BankAccount that has:
+
+- A private field _balance
+- A constructor to set initial balance
+- Method deposit(double amount)
+- Method withdraw(double amount)
+- Method getBalance() to return balance
+
+*Ensure the balance can’t be accessed or changed directly from outside.*

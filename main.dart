@@ -1,28 +1,22 @@
-import 'dart:math' show Random;
-
-double findMax({required final List<double> numbers}) {
-  double max = numbers.first;
-
-  for (int index = 1; index < numbers.length; ++index) {
-    final double number = numbers[index];
-    if (number > max) max = number;
-  }
-
-  return max;
-}
+import 'bank_account.dart';
 
 void main() {
-  final List<double> marks = [];
-  final Random rand = Random();
+  var account = BankAccount(initialBalance: 500);
 
-  for (int index = 0; index < 10; ++index) {
-    final double mark = rand.nextDouble() * 99 + 1;
-    final double roundedMark = double.parse(
-      mark.toStringAsFixed(2)
-    );
-    marks.add(roundedMark);
+  /// deposit
+  account.deposit(amount: 1000);
+  print(account);
+
+  try {
+    /// withdraw
+    /// try changing the value to throw or unthrow the exception
+    final withdrawAmount = 1345.56;
+    account.withdraw(amount: withdrawAmount);
+  } on InsufficientBalanceException {
+    print("Insufficient Balance!");
   }
 
-  print("Marks List: $marks");
-  print("Largest Mark: ${findMax(numbers: marks)}");
+  /// getBalance method demonatration (without round)
+  print("Balance: ${account.getBalance()}");
+
 }
